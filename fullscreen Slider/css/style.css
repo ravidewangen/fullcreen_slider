@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' ,sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+
+.indicators input{
+    visibility: hidden;
+    display: none;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+.buttons label{
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.indicators input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.indicators input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.indicators input:nth-child(3):checked ~ .buttons label:nth-child(3){
+    opacity: 1;
+    width: 50px;
+} 
+
+.content{
+    position: relative;
+    width: 300vw;
+    display: flex;
+    transition: 0.5s;
+}
+
+.content .box {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    padding: 40px;
+}
+
+.content .box:nth-child(1){
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+}
+
+.content .box:nth-child(2){
+    background: linear-gradient(45deg, #ff7675, #d63031);
+}
+.content .box:nth-child(3){
+    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+}
+
+.indicators input:nth-child(1):checked ~ .content{
+    left: 0;
+}
+
+.indicators input:nth-child(2):checked ~ .content{
+    left: -100vw;
+}
+
+.indicators input:nth-child(3):checked ~ .content{
+    left: -200vw;
+}
+
+.content .box .content-bx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content .box .content-bx i{
+    font-size: 112px;
+    color: #fff;
+}
+
+.content .box .content-bx h2{
+    font-size: 36px;
+    color: #fff;
+}
+
+.content .box .content-bx p{
+    font-size: 16px;
+    color: #fff;
+    max-width: 800px;
+    text-align: justify;
+}
+
+.content .box .content-bx button{
+    font-size:16px;
+    padding: 8px 24px;
+    background: #fff;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.content .box .content-bx button:hover{
+    transform: scale(1.2);
+}
